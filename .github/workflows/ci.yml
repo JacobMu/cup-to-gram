@@ -19,7 +19,7 @@ jobs:
               with:
                   node-version: 24
                   cache: pnpm
-            - run: pnpm install --frozen-lockfile=false
+            - run: pnpm install --frozen-lockfile
 
     audit:
         name: Audit vulnerabilities

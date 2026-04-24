@@ -10,7 +10,8 @@
     "build": "plasmo build",
     "test": "jest",
     "lint": "biome lint ./src",
-    "format": "biome format ./src"
+    "format": "biome format ./src",
+    "format:check": "biome format --check ./src"
   },
   "dependencies": {
     "plasmo": "0.90.5"

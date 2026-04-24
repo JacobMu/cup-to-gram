@@ -10,7 +10,8 @@ build/
 
 # IDE/editor config files
 .vscode/
-.github/
+.github/prompts/
+.github/skills/
 .git/
 .plasmo/
 

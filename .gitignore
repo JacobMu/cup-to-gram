@@ -1,0 +1,18 @@
+# installed node modules
+node_modules
+
+# Dependency lock files
+pnpm-lock.yaml
+
+# Build output
+dist/
+build/
+
+# IDE/editor config files
+.vscode/
+.github/
+.git/
+.plasmo/
+
+# agent plans
+plans/

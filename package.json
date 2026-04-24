@@ -1,0 +1,24 @@
+{
+  "name": "cup-to-gram",
+  "version": "1.0.0",
+  "description": "Browser extension that converts cup measurements to grams on recipe websites",
+  "scripts": {
+    "dev": "plasmo dev",
+    "build": "plasmo build",
+    "test": "jest",
+    "lint": "biome lint ./src",
+    "format": "biome format ./src"
+  },
+  "dependencies": {
+    "plasmo": "latest"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "latest",
+    "@types/chrome": "latest",
+    "@types/jest": "latest",
+    "jest": "latest",
+    "jest-environment-jsdom": "latest",
+    "ts-jest": "latest",
+    "typescript": "latest"
+  }
+}

@@ -1,14 +1,14 @@
 {
 	"extends": "plasmo/templates/tsconfig.base",
 	"compilerOptions": {
-    "moduleResolution": "bundler",
-    "module": "esnext",
+		"moduleResolution": "bundler",
+		"module": "esnext",
 		"strict": true,
-		"types": ["jest", "chrome"],
+		"types": ["chrome"],
 		"paths": {
 			"~/*": ["./src/*"]
 		}
 	},
 	"include": [".plasmo/index.d.ts", "src/**/*.ts"],
-	"exclude": ["node_modules"]
+	"exclude": ["node_modules", "src/**/__tests__/**/*.test.ts"]
 }

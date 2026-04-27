@@ -13,4 +13,4 @@ build/
 .plasmo/
 
 # agent plans
-plans/
+plans/.tsbuild-test

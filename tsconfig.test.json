@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "verbatimModuleSyntax": false,
+    "ignoreDeprecations": "6.0",
+    "baseUrl": ".",
+    "paths": {
+      "~/*": ["./src/*"]
+    },
+    "types": ["jest", "node"]
+  },
+  "include": ["src/**/__tests__/**/*.test.ts", "src/**/*.ts"],
+  "exclude": ["node_modules", "src/content.ts"]
+}

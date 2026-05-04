@@ -14,14 +14,7 @@ jobs:
         name: Install dependencies
         runs-on: ubuntu-latest
         steps:
-            - uses: actions/checkout@v4
-            - uses: pnpm/action-setup@v4
-              with:
-                  version: 10
-            - uses: actions/setup-node@v4
-              with:
-                  node-version: 24
-                  cache: pnpm
+            - uses: ./.github/actions/job-setup.yml
             - run: pnpm install --frozen-lockfile
 
     audit:
@@ -29,15 +22,7 @@ jobs:
         runs-on: ubuntu-latest
         needs: [ install-deps ]
         steps:
-            - uses: actions/checkout@v4
-            - uses: pnpm/action-setup@v4
-              with:
-                  version: 10
-            - uses: actions/setup-node@v4
-              with:
-                  node-version: 24
-                  cache: pnpm
-            - run: pnpm install --frozen-lockfile
+            - uses: ./.github/actions/job-setup.yml
             - run: pnpm audit --audit-level=high
 
     lint:
@@ -45,15 +30,7 @@ jobs:
         runs-on: ubuntu-latest
         needs: [ install-deps, audit ]
         steps:
-            - uses: actions/checkout@v4
-            - uses: pnpm/action-setup@v4
-              with:
-                  version: 10
-            - uses: actions/setup-node@v4
-              with:
-                  node-version: 24
-                  cache: pnpm
-            - run: pnpm install --frozen-lockfile
+            - uses: ./.github/actions/job-setup.yml
             - run: pnpm lint
 
     format-check:
@@ -61,15 +38,7 @@ jobs:
         runs-on: ubuntu-latest
         needs: [ install-deps, audit ]
         steps:
-            - uses: actions/checkout@v4
-            - uses: pnpm/action-setup@v4
-              with:
-                  version: 10
-            - uses: actions/setup-node@v4
-              with:
-                  node-version: 24
-                  cache: pnpm
-            - run: pnpm install --frozen-lockfile
+            - uses: ./.github/actions/job-setup.yml
             - run: pnpm format:check
 
     test:
@@ -77,13 +46,5 @@ jobs:
         runs-on: ubuntu-latest
         needs: [ install-deps, audit ]
         steps:
-            - uses: actions/checkout@v4
-            - uses: pnpm/action-setup@v4
-              with:
-                  version: 10
-            - uses: actions/setup-node@v4
-              with:
-                  node-version: 24
-                  cache: pnpm
-            - run: pnpm install --frozen-lockfile
+            - uses: ./.github/actions/job-setup.yml
             - run: pnpm test

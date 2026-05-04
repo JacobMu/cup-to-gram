@@ -42,6 +42,6 @@ describe("convertToGrams", () => {
   });
 
   it("returns null for unknown unit", () => {
-    expect(convertToGrams({ quantity: 1, unit: "liter" }, "all-purpose flour")).toBeNull();
+    expect(convertToGrams({ quantity: 1, unit: "gallon" }, "all-purpose flour")).toBeNull();
   });
 });

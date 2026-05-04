@@ -25,7 +25,8 @@ export function processTextNode(textNode: Text): boolean {
   const label = result.certain ? `[${result.grams}g]` : `[~${result.grams}g?]`;
 
   // Find the end of the unit in the preceding text to position the injection point
-  const unitPattern = /(?:cups?|c\.|tablespoons?|tbsp|tbs|T|teaspoons?|tsp|ts)\b/gi;
+  const unitPattern =
+    /\b(?:fl\.\s*oz\.|fluid\s+ounces?|fluid\s+oz|fl\s+oz|millilitres?|milliliters?|ml|litres?|liters?|l|cups?|c\.|tablespoons?|tbsp|tbs|T|teaspoons?|tsp|ts)(?!\w)/gi;
   let lastUnitMatch: RegExpExecArray | null = null;
 
   let unitMatch = unitPattern.exec(precedingText);

@@ -9,10 +9,13 @@ export const unitToCups: Record<string, number> = {
   cup: 1,
   tablespoon: 1 / 16,
   teaspoon: 1 / 48,
+  ml: 1 / 236.588,
+  liter: 1000 / 236.588,
+  "fl oz": 1 / 8,
 };
 
 const UNIT_PATTERN =
-  /(?:(\d+(?:\.\d+)?|[½¼¾⅓⅔⅛⅜⅝⅞]|\d+\s*\/\s*\d+|\d+[½¼¾⅓⅔⅛⅜⅝⅞])\s+)?(cups?|c\.|tablespoons?|tbsp|tbs|T|teaspoons?|tsp|ts)\b/i;
+  /(?:(\d+(?:\.\d+)?|[½¼¾⅓⅔⅛⅜⅝⅞]|\d+\s*\/\s*\d+|\d+[½¼¾⅓⅔⅛⅜⅝⅞])\s+)?\b(fl\.\s*oz\.|fluid\s+ounces?|fluid\s+oz|fl\s+oz|millilitres?|milliliters?|ml|litres?|liters?|l|cups?|c\.|tablespoons?|tbsp|tbs|T|teaspoons?|tsp|ts)(?!\w)/i;
 
 const UNIT_NORMALISE: Record<string, string> = {
   cup: "cup",
@@ -27,6 +30,22 @@ const UNIT_NORMALISE: Record<string, string> = {
   teaspoons: "teaspoon",
   tsp: "teaspoon",
   ts: "teaspoon",
+  ml: "ml",
+  milliliter: "ml",
+  milliliters: "ml",
+  millilitre: "ml",
+  millilitres: "ml",
+  l: "liter",
+  liter: "liter",
+  liters: "liter",
+  litre: "liter",
+  litres: "liter",
+  "fl oz": "fl oz",
+  "fl. oz.": "fl oz",
+  "fl.oz.": "fl oz",
+  "fluid oz": "fl oz",
+  "fluid ounce": "fl oz",
+  "fluid ounces": "fl oz",
 };
 
 export function parseVolumeMeasurement(precedingText: string): VolumeMeasurement | null {

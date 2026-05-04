@@ -105,4 +105,81 @@ describe("E2E: recipe conversion", () => {
       expect(labels).toContain("[120g]");
     });
   });
+
+  describe("E2E: recipe-4 — non-flour ingredients (sugars, fats, dairy, chocolate)", () => {
+    beforeEach(() => {
+      loadRecipe("test-recipe-4.html");
+      scanTextNodes(document.body);
+    });
+
+    it("converts 1 cup brown sugar to [218g]", () => {
+      const labels = Array.from(document.querySelectorAll(".ctg-conversion")).map(
+        (s) => s.textContent,
+      );
+      expect(labels).toContain("[218g]");
+    });
+
+    it("converts ½ cup butter to [114g]", () => {
+      const labels = Array.from(document.querySelectorAll(".ctg-conversion")).map(
+        (s) => s.textContent,
+      );
+      expect(labels).toContain("[114g]");
+    });
+
+    it("converts ¼ cup milk to [61g]", () => {
+      const labels = Array.from(document.querySelectorAll(".ctg-conversion")).map(
+        (s) => s.textContent,
+      );
+      expect(labels).toContain("[61g]");
+    });
+
+    it("converts 2 tablespoons cocoa powder to [11g]", () => {
+      const labels = Array.from(document.querySelectorAll(".ctg-conversion")).map(
+        (s) => s.textContent,
+      );
+      expect(labels).toContain("[11g]");
+    });
+
+    it("converts 1 cup chocolate chips to [170g]", () => {
+      const labels = Array.from(document.querySelectorAll(".ctg-conversion")).map(
+        (s) => s.textContent,
+      );
+      expect(labels).toContain("[170g]");
+    });
+  });
+
+  describe("E2E: recipe-5 — ml and fl oz measurements", () => {
+    beforeEach(() => {
+      loadRecipe("test-recipe-5.html");
+      scanTextNodes(document.body);
+    });
+
+    it("converts 240 ml milk to [248g]", () => {
+      const labels = Array.from(document.querySelectorAll(".ctg-conversion")).map(
+        (s) => s.textContent,
+      );
+      expect(labels).toContain("[248g]");
+    });
+
+    it("converts 120 ml water to [122g]", () => {
+      const labels = Array.from(document.querySelectorAll(".ctg-conversion")).map(
+        (s) => s.textContent,
+      );
+      expect(labels).toContain("[122g]");
+    });
+
+    it("converts 60 ml vegetable oil to [55g]", () => {
+      const labels = Array.from(document.querySelectorAll(".ctg-conversion")).map(
+        (s) => s.textContent,
+      );
+      expect(labels).toContain("[55g]");
+    });
+
+    it("converts 2 fl oz honey to [85g]", () => {
+      const labels = Array.from(document.querySelectorAll(".ctg-conversion")).map(
+        (s) => s.textContent,
+      );
+      expect(labels).toContain("[85g]");
+    });
+  });
 });

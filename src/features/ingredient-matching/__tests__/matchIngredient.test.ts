@@ -65,9 +65,47 @@ describe("matchIngredient — case insensitivity", () => {
   });
 });
 
+describe("matchIngredient — alias resolution (non-flour)", () => {
+  it("icing sugar resolves to powdered sugar", () => {
+    expect(matchIngredient("icing sugar")).toBe("powdered sugar");
+  });
+
+  it("confectioners sugar resolves to powdered sugar", () => {
+    expect(matchIngredient("confectioners sugar")).toBe("powdered sugar");
+  });
+
+  it("turbinado sugar resolves to raw sugar", () => {
+    expect(matchIngredient("turbinado sugar")).toBe("raw sugar");
+  });
+
+  it("canola oil resolves to vegetable oil", () => {
+    expect(matchIngredient("canola oil")).toBe("vegetable oil");
+  });
+
+  it("ghee resolves to butter", () => {
+    expect(matchIngredient("ghee")).toBe("butter");
+  });
+
+  it("double cream resolves to heavy cream", () => {
+    expect(matchIngredient("double cream")).toBe("heavy cream");
+  });
+
+  it("old-fashioned oats resolves to rolled oats", () => {
+    expect(matchIngredient("old-fashioned oats")).toBe("rolled oats");
+  });
+
+  it("cacao powder resolves to cocoa powder", () => {
+    expect(matchIngredient("cacao powder")).toBe("cocoa powder");
+  });
+
+  it("cornflour resolves to cornstarch", () => {
+    expect(matchIngredient("cornflour")).toBe("cornstarch");
+  });
+});
+
 describe("matchIngredient — no match", () => {
   it("returns null when no ingredient is found", () => {
-    expect(matchIngredient("sugar")).toBeNull();
+    expect(matchIngredient("mystery powder")).toBeNull();
   });
 
   it("returns null for empty string", () => {

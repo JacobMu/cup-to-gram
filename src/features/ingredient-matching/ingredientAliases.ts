@@ -42,6 +42,43 @@ export const ingredientAliases: Record<string, string> = {
   // Non-wheat aliases
   "chickpea flour": "gram flour",
   besan: "gram flour",
-  "tapioca starch": "tapioca flour",
   "rice flour": "brown rice flour",
+
+  // Sugar aliases
+  "icing sugar": "powdered sugar",
+  "confectioners sugar": "powdered sugar",
+  "confectioners' sugar": "powdered sugar",
+  "white sugar": "granulated sugar",
+  "turbinado sugar": "raw sugar",
+  "demerara sugar": "raw sugar",
+  "golden caster sugar": "caster sugar",
+
+  // Fat & oil aliases
+  "canola oil": "vegetable oil",
+  "rapeseed oil": "vegetable oil",
+  "sunflower oil": "vegetable oil",
+  ghee: "butter",
+  "unsalted butter": "butter",
+  "salted butter": "butter",
+
+  // Dairy aliases
+  "whole milk": "milk",
+  "skim milk": "milk",
+  "whipping cream": "heavy cream",
+  "double cream": "heavy cream",
+
+  // Oat aliases
+  "old-fashioned oats": "rolled oats",
+  "porridge oats": "rolled oats",
+  "instant oats": "quick oats",
+
+  // Chocolate aliases
+  "cacao powder": "cocoa powder",
+  "dutch-process cocoa": "cocoa powder",
+  "dark chocolate chips": "chocolate chips",
+
+  // Starch aliases
+  "corn starch": "cornstarch",
+  cornflour: "cornstarch",
+  "maize starch": "cornstarch",
 };

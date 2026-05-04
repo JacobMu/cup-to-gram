@@ -55,4 +55,51 @@ export const conversionTable: Record<string, ConversionEntry> = {
   "teff flour": { grams: 120, certain: true },
   "sorghum flour": { grams: 121, certain: true },
   "cassava flour": { grams: 120, certain: true },
+
+  // Sugars
+  sugar: { grams: 200, certain: false },
+  "granulated sugar": { grams: 200, certain: true },
+  "caster sugar": { grams: 225, certain: true },
+  "brown sugar": { grams: 218, certain: true },
+  "light brown sugar": { grams: 218, certain: true },
+  "dark brown sugar": { grams: 220, certain: true },
+  "powdered sugar": { grams: 125, certain: true },
+  "raw sugar": { grams: 205, certain: true },
+  "muscovado sugar": { grams: 220, certain: true },
+
+  // Fats & oils
+  butter: { grams: 227, certain: true },
+  shortening: { grams: 195, certain: true },
+  lard: { grams: 205, certain: true },
+  "vegetable oil": { grams: 218, certain: true },
+  "olive oil": { grams: 216, certain: true },
+  "coconut oil": { grams: 218, certain: true },
+
+  // Dairy & liquids
+  milk: { grams: 244, certain: true },
+  "heavy cream": { grams: 237, certain: true },
+  buttermilk: { grams: 237, certain: true },
+  yogurt: { grams: 245, certain: true },
+  "sour cream": { grams: 237, certain: true },
+  "half-and-half": { grams: 227, certain: true },
+  water: { grams: 240, certain: true },
+  honey: { grams: 340, certain: true },
+  "maple syrup": { grams: 310, certain: true },
+  molasses: { grams: 337, certain: true },
+  "vegetable broth": { grams: 244, certain: true },
+
+  // Oats
+  oats: { grams: 100, certain: false },
+  "rolled oats": { grams: 113, certain: true },
+  "quick oats": { grams: 98, certain: true },
+  "steel-cut oats": { grams: 140, certain: true },
+
+  // Chocolate & cocoa
+  "cocoa powder": { grams: 85, certain: true },
+  "chocolate chips": { grams: 170, certain: true },
+
+  // Starches
+  cornstarch: { grams: 120, certain: true },
+  "potato starch": { grams: 152, certain: true },
+  "tapioca starch": { grams: 113, certain: true },
 };

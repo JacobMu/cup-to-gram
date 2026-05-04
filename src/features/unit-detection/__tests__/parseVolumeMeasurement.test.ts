@@ -31,6 +31,18 @@ describe("unitToCups", () => {
   it("teaspoon maps to 1/48", () => {
     expect(unitToCups["teaspoon"]).toBeCloseTo(1 / 48);
   });
+
+  it("ml maps to 1/236.588", () => {
+    expect(unitToCups["ml"]).toBeCloseTo(1 / 236.588);
+  });
+
+  it("liter maps to 1000/236.588", () => {
+    expect(unitToCups["liter"]).toBeCloseTo(1000 / 236.588);
+  });
+
+  it("fl oz maps to 1/8", () => {
+    expect(unitToCups["fl oz"]).toBe(1 / 8);
+  });
 });
 
 describe("parseVolumeMeasurement", () => {
@@ -69,5 +81,41 @@ describe("parseVolumeMeasurement", () => {
 
   it("returns null for empty string", () => {
     expect(parseVolumeMeasurement("")).toBeNull();
+  });
+
+  it("parses ml measurement", () => {
+    expect(parseVolumeMeasurement("240 ml")).toEqual({ quantity: 240, unit: "ml" });
+  });
+
+  it("parses milliliters (full word)", () => {
+    expect(parseVolumeMeasurement("120 milliliters")).toEqual({ quantity: 120, unit: "ml" });
+  });
+
+  it("parses millilitres (UK spelling)", () => {
+    expect(parseVolumeMeasurement("60 millilitres")).toEqual({ quantity: 60, unit: "ml" });
+  });
+
+  it("parses liter abbreviation", () => {
+    expect(parseVolumeMeasurement("1 l")).toEqual({ quantity: 1, unit: "liter" });
+  });
+
+  it("parses liter full word", () => {
+    expect(parseVolumeMeasurement("1.5 liters")).toEqual({ quantity: 1.5, unit: "liter" });
+  });
+
+  it("parses fl oz abbreviation", () => {
+    expect(parseVolumeMeasurement("8 fl oz")).toEqual({ quantity: 8, unit: "fl oz" });
+  });
+
+  it("parses fl. oz. with periods", () => {
+    expect(parseVolumeMeasurement("4 fl. oz.")).toEqual({ quantity: 4, unit: "fl oz" });
+  });
+
+  it("parses fluid ounces (full words)", () => {
+    expect(parseVolumeMeasurement("2 fluid ounces")).toEqual({ quantity: 2, unit: "fl oz" });
+  });
+
+  it("does not match l inside a word like bowl", () => {
+    expect(parseVolumeMeasurement("place in a bowl and stir")).toBeNull();
   });
 });

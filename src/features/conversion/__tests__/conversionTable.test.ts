@@ -15,7 +15,7 @@ describe("conversionTable", () => {
     });
 
     it("unqualified flour is uncertain at 125g", () => {
-      expect(conversionTable['flour']).toEqual({ grams: 125, certain: false });
+      expect(conversionTable["flour"]).toEqual({ grams: 125, certain: false });
     });
   });
 

@@ -1,5 +1,5 @@
-import { parseVolumeMeasurement, unitToCups } from "../parseVolumeMeasurement";
 import { unicodeFractionToDecimal } from "../parseQuantity";
+import { parseVolumeMeasurement, unitToCups } from "../parseVolumeMeasurement";
 
 describe("unicodeFractionToDecimal", () => {
   it("converts ½ to 0.5", () => {

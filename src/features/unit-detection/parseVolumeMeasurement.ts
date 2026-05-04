@@ -41,7 +41,8 @@ export function parseVolumeMeasurement(precedingText: string): VolumeMeasurement
 
   // Quantity may be captured in group 1, or may appear just before the unit in text
   const quantityText = last[1] ?? last.input.slice(0, last.index).trim().split(/\s+/).pop() ?? "";
-  const quantity = parseQuantity(quantityText) ?? parseQuantity(last.input.slice(0, last.index)) ?? 1;
+  const quantity =
+    parseQuantity(quantityText) ?? parseQuantity(last.input.slice(0, last.index)) ?? 1;
 
   return { quantity, unit };
 }

@@ -8,11 +8,11 @@ The extension works by injecting a content script into the web page of recipe we
 
 ## Tech stack
 - Typescript
-- plasmohq/plasmo framework for browser extension development
+- wxt framework for browser extension development
 - Biome for code formatting and linting
 - esbuild for bundling the extension
 - GitHub Actions for continuous integration and deployment
-- Jest for testing
+- wxt/vitest for testing
 
 ## Conventions and Architecture
 ### Convetions
@@ -40,6 +40,6 @@ flowchart TD;
 ```
 
 ## Testing
-The extension uses Jest for testing. Tests are organized in a `__tests__` folder within each feature folder, following the vertical slicing convention. Each test file corresponds to a specific component or functionality, ensuring that tests are focused and maintainable.
+The extension uses Vitest  for testing. Tests are organized in a `__tests__` folder within each feature folder, following the vertical slicing convention. Each test file corresponds to a specific component or functionality, ensuring that tests are focused and maintainable.
 
 For e2e test flow we have a test that simulates the extension running on a sample recipe website (the sample recipe website is stored in test-assets folder), verifying that cup measurements are correctly converted to grams based on the conversion table.

@@ -12,10 +12,10 @@
     "dev": "wxt",
     "build": "wxt build",
     "build:firefox": "wxt build -b firefox",
-    "test": "jest",
+    "test": "vitest",
     "lint": "biome lint ./src",
-    "format": "biome format ./src",
-    "format:check": "biome format --check ./src"
+    "format:check": "biome format ./src",
+    "format:write": "biome format --write ./src"
   },
   "dependencies": {
     "vitest": "4.1.5"
@@ -24,9 +24,6 @@
     "@biomejs/biome": "2.4.13",
     "@types/chrome": "0.1.40",
     "@types/node": "25.6.0",
-    "jest": "30.3.0",
-    "jest-environment-jsdom": "30.3.0",
-    "ts-jest": "29.4.9",
     "typescript": "6.0.3",
     "wxt": "0.20.25"
   }

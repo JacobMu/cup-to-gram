@@ -9,9 +9,7 @@ function buildPattern(): RegExp {
   // Sort longest-first so more-specific patterns win over substrings
   allNames.sort((a, b) => b.length - a.length);
 
-  const escaped = allNames.map((name) =>
-    name.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")
-  );
+  const escaped = allNames.map((name) => name.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"));
 
   return new RegExp(escaped.join("|"), "i");
 }

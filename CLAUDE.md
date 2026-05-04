@@ -7,7 +7,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ```bash
 pnpm dev           # start Plasmo dev mode (hot-reload extension)
 pnpm build         # build Chrome MV3 artifact (output: build/)
-pnpm test          # run all Jest tests
+pnpm test          # run all Vitest tests
 pnpm lint          # Biome lint src/
 pnpm format        # Biome format src/
 ```
@@ -56,7 +56,7 @@ Each feature lives in `src/features/<feature>/` with co-located `__tests__/`:
 
 ### Path alias
 
-`~/*` resolves to `./src/*` (configured in both `tsconfig.json` and `jest.config.ts`).
+`~/*` resolves to `./src/*` (configured in both `tsconfig.json` and `vitest.config.ts`).
 
 ## Conventions
 

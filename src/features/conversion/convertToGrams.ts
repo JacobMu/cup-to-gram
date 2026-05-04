@@ -8,7 +8,7 @@ export interface ConversionResult {
 
 export function convertToGrams(
   measurement: VolumeMeasurement,
-  ingredient: string
+  ingredient: string,
 ): ConversionResult | null {
   const cupsMultiplier = unitToCups[measurement.unit];
   if (cupsMultiplier === undefined) return null;

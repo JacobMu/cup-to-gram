@@ -1,6 +1,3 @@
-/**
- * @jest-environment jsdom
- */
 import { processTextNode } from "../processTextNode";
 import { scanTextNodes } from "../scanTextNodes";
 

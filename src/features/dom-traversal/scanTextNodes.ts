@@ -27,8 +27,6 @@ export function scanTextNodes(root: Node): void {
 
 function isProcessed(node: Element | Node | null): boolean {
   if (!node) return false;
-  const el = node.nodeType === Node.ELEMENT_NODE
-    ? (node as Element)
-    : (node as Node).parentElement;
+  const el = node.nodeType === Node.ELEMENT_NODE ? (node as Element) : (node as Node).parentElement;
   return el?.closest("[data-ctg-processed]") !== null;
 }

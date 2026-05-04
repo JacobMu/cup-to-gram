@@ -1,4 +1,4 @@
-## ADDED Requirements
+## MODIFIED Requirements
 
 ### Requirement: format:check script performs read-only format verification
 The `package.json` SHALL include a `format:check` script that runs `biome format --check ./src`. The script SHALL exit with a non-zero code if any file would be changed by formatting, and SHALL NOT write any changes to disk.
@@ -10,6 +10,8 @@ The `package.json` SHALL include a `format:check` script that runs `biome format
 #### Scenario: Incorrectly formatted source
 - **WHEN** `pnpm format:check` is run and one or more files differ from Biome's expected format
 - **THEN** the command exits with a non-zero code and reports which files have violations
+
+## ADDED Requirements
 
 ### Requirement: dev script starts WXT development server
 The `package.json` SHALL include a `dev` script that runs `wxt dev`. The previous `plasmo dev` command SHALL be removed.

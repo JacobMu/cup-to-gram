@@ -1,14 +1,6 @@
 {
-	"extends": "plasmo/templates/tsconfig.base",
+	"extends": "./.wxt/tsconfig.json",
 	"compilerOptions": {
-		"moduleResolution": "bundler",
-		"module": "esnext",
-		"strict": true,
-		"types": ["chrome"],
-		"paths": {
-			"~/*": ["./src/*"]
-		}
+		"types": ["vitest/globals", "node"]
 	},
-	"include": [".plasmo/index.d.ts", "src/**/*.ts"],
-	"exclude": ["node_modules", "src/**/__tests__/**/*.test.ts"]
 }

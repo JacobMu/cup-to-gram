@@ -1,6 +1,6 @@
+import { convertToGrams } from "../conversion/convertToGrams";
 import { INGREDIENT_PATTERN, matchIngredient } from "../ingredient-matching/matchIngredient";
 import { parseVolumeMeasurement } from "../unit-detection/parseVolumeMeasurement";
-import { convertToGrams } from "../conversion/convertToGrams";
 import { injectLabel } from "./injectLabel";
 
 export function processTextNode(textNode: Text): boolean {
@@ -26,10 +26,12 @@ export function processTextNode(textNode: Text): boolean {
 
   // Find the end of the unit in the preceding text to position the injection point
   const unitPattern = /(?:cups?|c\.|tablespoons?|tbsp|tbs|T|teaspoons?|tsp|ts)\b/gi;
-  let unitMatch: RegExpExecArray | null;
   let lastUnitMatch: RegExpExecArray | null = null;
-  while ((unitMatch = unitPattern.exec(precedingText)) !== null) {
+
+  let unitMatch = unitPattern.exec(precedingText);
+  while (unitMatch !== null) {
     lastUnitMatch = unitMatch;
+    unitMatch = unitPattern.exec(precedingText);
   }
   if (!lastUnitMatch) return false;
 

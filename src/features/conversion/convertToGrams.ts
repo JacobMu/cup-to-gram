@@ -11,12 +11,17 @@ export function convertToGrams(
   ingredient: string,
 ): ConversionResult | null {
   const cupsMultiplier = unitToCups[measurement.unit];
-  if (cupsMultiplier === undefined) return null;
+  if (cupsMultiplier === undefined) {
+    return null;
+  }
 
   const entry: ConversionEntry | undefined = conversionTable[ingredient];
-  if (!entry) return null;
+  if (!entry) {
+    return null;
+  }
 
-  const grams = Math.round(entry.grams * cupsMultiplier * measurement.quantity);
-
-  return { grams, certain: entry.certain };
+  return {
+    grams: Math.round(entry.grams * cupsMultiplier * measurement.quantity),
+    certain: entry.certain,
+  };
 }

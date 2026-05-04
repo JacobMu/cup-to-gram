@@ -21,7 +21,10 @@ export function parseQuantity(text: string): number | null {
   const mixedUnicode = new RegExp(`(\\d+)([${unicodeFractionPattern}])`).exec(text);
   if (mixedUnicode) {
     const whole = parseInt(mixedUnicode[1], 10);
-    const frac = unicodeFractionToDecimal(mixedUnicode[2])!;
+    const frac = unicodeFractionToDecimal(mixedUnicode[2]);
+    if (frac === null) {
+      return null;
+    }
     return whole + frac;
   }
 

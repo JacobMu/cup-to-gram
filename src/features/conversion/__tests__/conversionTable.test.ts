@@ -157,7 +157,9 @@ describe("conversionTable", () => {
     });
 
     it("tapioca starch is distinct from tapioca flour", () => {
-      expect(conversionTable["tapioca starch"]?.grams).not.toBe(conversionTable["tapioca flour"]?.grams);
+      expect(conversionTable["tapioca starch"]?.grams).not.toBe(
+        conversionTable["tapioca flour"]?.grams,
+      );
     });
   });
 });

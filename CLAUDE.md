@@ -58,6 +58,15 @@ Each feature lives in `src/features/<feature>/` with co-located `__tests__/`:
 
 `~/*` resolves to `./src/*` (configured in both `tsconfig.json` and `vitest.config.ts`).
 
+## Pair Programming Mode
+
+Use `/opsx:pair` (or `/opsx:apply --pair`) to work on OpenSpec changes in pair programming mode:
+
+- **You are the driver** — you write all implementation code.
+- **The agent is the navigator** — it reads the spec, briefs you on what to implement, inserts a `// TODO(human)` anchor at the target location, and validates your contribution against the spec before advancing to the next task.
+- The agent never edits implementation source files in this mode (only the anchor and task checkboxes).
+- Pair mode is session-scoped and opt-in; `/opsx:apply` without `--pair` runs the standard autonomous flow.
+
 ## Conventions
 
 - **No `any` types** — use explicit types and interfaces throughout.

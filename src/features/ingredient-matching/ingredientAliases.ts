@@ -81,4 +81,28 @@ export const ingredientAliases: Record<string, string> = {
   "corn starch": "cornstarch",
   cornflour: "cornstarch",
   "maize starch": "cornstarch",
+
+  // Salt aliases
+  "iodized salt": "table salt",
+  "pickling salt": "fine salt",
+  "curing salt": "fine salt",
+  "rock salt": "coarse salt",
+  "fleur de sel": "fine sea salt",
+  "flake salt": "coarse sea salt",
+  "maldon salt": "coarse sea salt",
+  "salt flakes": "coarse sea salt",
+
+  // Yeast aliases
+  "dry yeast": "active dry yeast",
+  "dried yeast": "active dry yeast",
+  "fast-action yeast": "instant yeast",
+  "fast action yeast": "instant yeast",
+  "quick-rise yeast": "instant yeast",
+  "rapid-rise yeast": "instant yeast",
+  "bread machine yeast": "instant yeast",
+  "easy bake yeast": "instant yeast",
+  "compressed yeast": "fresh yeast",
+
+  // Sourdough starter aliases
+  levain: "sourdough starter",
 };

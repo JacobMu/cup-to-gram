@@ -7,6 +7,8 @@ tags: [workflow, artifacts, experimental]
 
 Implement tasks from an OpenSpec change.
 
+> **Pair programming mode**: If `--pair` is in the arguments (e.g., `/opsx:apply --pair` or `/opsx:apply my-change --pair`), switch to pair mode immediately: follow all instructions in the `/opsx:pair` skill instead of continuing here. In pair mode, you are the navigator — the user writes all implementation code.
+
 **Input**: Optionally specify a change name (e.g., `/opsx:apply add-auth`). If omitted, check if it can be inferred from conversation context. If vague or ambiguous you MUST prompt for available changes.
 
 **Steps**

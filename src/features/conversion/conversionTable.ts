@@ -102,4 +102,21 @@ export const conversionTable: Record<string, ConversionEntry> = {
   cornstarch: { grams: 120, certain: true },
   "potato starch": { grams: 152, certain: true },
   "tapioca starch": { grams: 113, certain: true },
+
+  // Salt
+  salt: { grams: 292, certain: false },
+  "table salt": { grams: 292, certain: true },
+  "fine salt": { grams: 288, certain: true },
+  "kosher salt": { grams: 215, certain: false },
+  "coarse salt": { grams: 180, certain: true },
+  "sea salt": { grams: 275, certain: false },
+  "fine sea salt": { grams: 288, certain: true },
+  "coarse sea salt": { grams: 175, certain: true },
+
+  // Yeast
+  yeast: { grams: 134, certain: false },
+  "active dry yeast": { grams: 150, certain: true },
+  "instant yeast": { grams: 134, certain: true },
+  "fresh yeast": { grams: 233, certain: true },
+  "sourdough starter": { grams: 240, certain: true },
 };

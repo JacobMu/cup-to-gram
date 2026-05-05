@@ -162,4 +162,60 @@ describe("conversionTable", () => {
       );
     });
   });
+
+  describe("salt", () => {
+    it("salt is 292g and not certain", () => {
+      expect(conversionTable["salt"]).toEqual({ grams: 292, certain: false });
+    });
+
+    it("table salt is 292g and certain", () => {
+      expect(conversionTable["table salt"]).toEqual({ grams: 292, certain: true });
+    });
+
+    it("fine salt is 288g and certain", () => {
+      expect(conversionTable["fine salt"]).toEqual({ grams: 288, certain: true });
+    });
+
+    it("kosher salt is 215g and not certain", () => {
+      expect(conversionTable["kosher salt"]).toEqual({ grams: 215, certain: false });
+    });
+
+    it("coarse salt is 180g and certain", () => {
+      expect(conversionTable["coarse salt"]).toEqual({ grams: 180, certain: true });
+    });
+
+    it("sea salt is 275g and not certain", () => {
+      expect(conversionTable["sea salt"]).toEqual({ grams: 275, certain: false });
+    });
+
+    it("fine sea salt is 288g and certain", () => {
+      expect(conversionTable["fine sea salt"]).toEqual({ grams: 288, certain: true });
+    });
+
+    it("coarse sea salt is 175g and certain", () => {
+      expect(conversionTable["coarse sea salt"]).toEqual({ grams: 175, certain: true });
+    });
+  });
+
+  describe("yeast", () => {
+    it('yeast is 134g and not certain', () => {
+      expect(conversionTable["yeast"]).toEqual({ grams: 134, certain: false });
+    });
+    
+    it('active dry yeast is 150g and certain', () => {
+      expect(conversionTable["active dry yeast"]).toEqual({ grams: 150, certain: true });
+    });
+
+    it('instant yeast is 134g and certain', () => {
+      expect(conversionTable["instant yeast"]).toEqual({ grams: 134, certain: true });
+    });
+
+    it('fresh yeast is 233g and certain', () => {
+      expect(conversionTable["fresh yeast"]).toEqual({ grams: 233, certain: true });
+    });
+
+    it('sourdough starter is 240g and certain', () => {
+      expect(conversionTable["sourdough starter"]).toEqual({ grams: 240, certain: true });
+    });
+  });
 });

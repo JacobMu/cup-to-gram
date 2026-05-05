@@ -198,23 +198,23 @@ describe("conversionTable", () => {
   });
 
   describe("yeast", () => {
-    it('yeast is 134g and not certain', () => {
+    it("yeast is 134g and not certain", () => {
       expect(conversionTable["yeast"]).toEqual({ grams: 134, certain: false });
     });
-    
-    it('active dry yeast is 150g and certain', () => {
+
+    it("active dry yeast is 150g and certain", () => {
       expect(conversionTable["active dry yeast"]).toEqual({ grams: 150, certain: true });
     });
 
-    it('instant yeast is 134g and certain', () => {
+    it("instant yeast is 134g and certain", () => {
       expect(conversionTable["instant yeast"]).toEqual({ grams: 134, certain: true });
     });
 
-    it('fresh yeast is 233g and certain', () => {
+    it("fresh yeast is 233g and certain", () => {
       expect(conversionTable["fresh yeast"]).toEqual({ grams: 233, certain: true });
     });
 
-    it('sourdough starter is 240g and certain', () => {
+    it("sourdough starter is 240g and certain", () => {
       expect(conversionTable["sourdough starter"]).toEqual({ grams: 240, certain: true });
     });
   });

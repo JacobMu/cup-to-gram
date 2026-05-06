@@ -3,7 +3,11 @@
   "files": {
     "includes": [
       "src/**/*.ts",
+<<<<<<< HEAD
       "./*.config.ts"
+=======
+      "./*.config.*"
+>>>>>>> 3fdcdee (feat: add Firefox-specific permissions and settings to the extension manifest)
     ]
   },
   "formatter": {

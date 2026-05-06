@@ -1,13 +1,4 @@
-### Requirement: Agent acts as navigator only
-In pair programming mode, the agent SHALL never write, edit, or overwrite implementation code in the project. It MAY only insert TODO(human) anchor comments and remove them after validation.
-
-#### Scenario: Agent refrains from implementation
-- **WHEN** pair mode is active and a task requires new code
-- **THEN** the agent inserts a TODO(human) anchor at the target location and presents a Learn by Doing guidance block, then stops and waits for the user
-
-#### Scenario: Agent removes anchor after validation
-- **WHEN** the user signals their implementation is complete and the agent validates it
-- **THEN** the agent removes the TODO(human) comment from the file before advancing to the next task
+## MODIFIED Requirements
 
 ### Requirement: Per-task navigation briefing
 Before requesting a user contribution, the agent SHALL provide a navigation briefing that covers all tasks in the current file chunk — including the target file, all spec requirements being satisfied, and all acceptance criteria for the chunk.
@@ -39,6 +30,8 @@ After a user contribution, the agent SHALL validate the implementation against A
 - **WHEN** a task in `tasks.md` has no backtick file tag
 - **THEN** the agent navigates that task individually using the original per-task loop, as if it were a single-task chunk
 
+## ADDED Requirements
+
 ### Requirement: Navigator groups pending tasks by file tag before starting
 At the start of the navigator loop, the agent SHALL read all pending tasks, extract their file tags, and form an ordered list of file chunks before beginning navigation.
 
@@ -49,14 +42,3 @@ At the start of the navigator loop, the agent SHALL read all pending tasks, extr
 #### Scenario: Multiple anchors in one file
 - **WHEN** a file chunk contains more than one task
 - **THEN** the agent SHALL insert one `// TODO(human): <task description>` anchor per task at the appropriate location within the file before presenting the briefing
-
-### Requirement: Pair mode is opt-in and session-scoped
-Pair programming mode SHALL only activate when explicitly invoked (e.g., `/opsx:apply --pair`) and SHALL NOT persist across sessions or affect the standard apply flow.
-
-#### Scenario: Standard apply unaffected
-- **WHEN** the user invokes `/opsx:apply` without a pair flag
-- **THEN** the agent runs the standard autonomous implementation flow with no pair-mode behavior
-
-#### Scenario: Pair mode activation
-- **WHEN** the user invokes `/opsx:apply --pair` or the designated pair skill
-- **THEN** the agent enters pair mode for the duration of that session only

@@ -98,6 +98,27 @@ After completing all artifacts, summarize:
   - Do NOT copy `<context>`, `<rules>`, `<project_context>` blocks into the artifact
   - These guide what you write, but should never appear in the output
 
+**Task Authoring Rules** (override CLI instruction when generating `tasks.md`)
+
+These rules take precedence over the CLI's task guidance:
+
+- **File-scoped tasks**: Every task MUST begin its description with a backtick-wrapped file path, e.g. `` `src/features/parser.ts` ``. All edits to the same file collapse into ONE task — do not create separate tasks for individual fields, functions, or lines within the same file.
+- **`manual` tag**: Tasks with no source file target (e.g., verification steps, manual checks) MUST use `` `manual` `` as their tag instead of a file path.
+- **Multi-file changes**: When a spec requires edits to two or more distinct files, create one task per file — each with its own file tag. A single task MUST NOT declare multiple file targets.
+- **Result**: A well-formed tasks.md will typically have far fewer tasks than there are individual edits — one task per file touched, plus `manual` tasks for verification.
+
+Example:
+```
+## 1. Core Implementation
+
+- [ ] 1.1 `src/features/parser.ts` Add unicodeFractionToDecimal and extend parseQuantity to handle mixed numbers
+- [ ] 1.2 `src/features/parser.test.ts` Add test cases for unicode fractions and mixed number parsing
+
+## 2. Verification
+
+- [ ] 2.1 `manual` Run pnpm test and confirm all new test cases pass
+```
+
 **Guardrails**
 - Create ALL artifacts needed for implementation (as defined by schema's `apply.requires`)
 - Always read dependency artifacts before creating a new one

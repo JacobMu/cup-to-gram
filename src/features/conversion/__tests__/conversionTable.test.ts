@@ -169,7 +169,7 @@ describe("conversionTable", () => {
     });
 
     it("table salt is 292g and certain", () => {
-      expect(conversionTable["table salt"]).toEqual({ grams: 1, certain: true });
+      expect(conversionTable["table salt"]).toEqual({ grams: 292, certain: true });
     });
 
     it("fine salt is 288g and certain", () => {

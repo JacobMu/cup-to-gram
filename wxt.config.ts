@@ -5,9 +5,8 @@ export default defineConfig({
   manifest: {
     browser_specific_settings: {
       gecko: {
-        id: "cup-to-gram-web-extension",
+        id: "@cup-to-gram-webextensions",
         data_collection_permissions: {
-          optional: ["none"],
           required: ["none"],
         },
       },

@@ -39,6 +39,69 @@ flowchart TD;
     G["`Inject converted value after the volume unit e.g 2 Cups AP flour is transformed to 2 Cups [240 g] AP flour`"]
 ```
 
+## Build Instructions
+
+### Requirements
+
+| Tool | Minimum version | Install |
+|---|---|---|
+| Operating system | macOS or Linux | — |
+| [Node.js](https://nodejs.org) | 24.0.0 | https://nodejs.org |
+| [pnpm](https://pnpm.io/installation) | 10.0.0 | https://pnpm.io/installation |
+
+Verify installed versions:
+```bash
+node --version   # must be >= 24.0.0
+pnpm --version   # must be >= 10.0.0
+```
+
+### Automated build (recommended for reviewers)
+
+A single script installs dependencies, lints, runs tests, and produces both browser artifacts:
+
+```bash
+bash build.sh
+```
+
+After a successful run:
+- Chrome MV3 artifact: `.output/chrome-mv3/`
+- Firefox MV2 artifact: `.output/firefox-mv2/`
+
+### Step-by-step manual build
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/jakubmurin/cup-to-gram.git
+   cd cup-to-gram
+   ```
+
+2. **Install dependencies**
+   ```bash
+   pnpm install --frozen-lockfile
+   ```
+
+3. **Lint the source**
+   ```bash
+   pnpm lint
+   ```
+
+4. **Run the test suite**
+   ```bash
+   pnpm test --run
+   ```
+
+5. **Build the Chrome extension (MV3)**
+   ```bash
+   pnpm build
+   ```
+   Output: `.output/chrome-mv3/`
+
+6. **Build the Firefox extension (MV2)**
+   ```bash
+   pnpm build:firefox
+   ```
+   Output: `.output/firefox-mv2/`
+
 ## Testing
 The extension uses Vitest  for testing. Tests are organized in a `__tests__` folder within each feature folder, following the vertical slicing convention. Each test file corresponds to a specific component or functionality, ensuring that tests are focused and maintainable.
 

@@ -19,7 +19,7 @@
     "format:write": "biome format --write ./src"
   },
   "dependencies": {
-    "vitest": "4.1.5"
+    "vitest": "4.1.11"
   },
   "devDependencies": {
     "@biomejs/biome": "2.4.13",
